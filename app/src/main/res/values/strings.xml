@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">RestaurantMenu</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_restaurant">Restaurant Menu</string>
+    <string name="check_it">Check it</string>
+    <string name="title_activity_restaurant_menu">RestaurantMenuActivity</string>
+    <string name="L_login">Login Now</string>
+    <string name="enter_your_password">Enter Your Password</string>
+    <string name="password">Password</string>
+    <string name="enter_your_username">Enter Your Username</string>
+    <string name="username">Username</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="login">Login</string>
+    <string name="sign_up">Sign Up</string>
+</resources>
