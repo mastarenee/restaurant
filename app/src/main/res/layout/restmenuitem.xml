@@ -67,8 +67,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0"
                 android:padding="10dp"
-                android:textSize="20sp"
-                android:text="TextView" />
+                android:text="TextView"
+                android:textSize="30sp" />
 
 
         </LinearLayout>

@@ -3,6 +3,7 @@ package com.gist.bajantech.restaurantmenu;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -22,6 +23,7 @@ public class LoginActivity extends AppCompatActivity {
     private TextView lpasswordtxt;
     private EditText lpassword;
     private Button loginbutton;
+    private Button signupbutton;
     private TextView loginError;
     myDbAdapter helper;
 
@@ -30,13 +32,19 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
+
+
         helper = new myDbAdapter(this);
 
         lusernametxt = (TextView) findViewById(R.id.lusernametxt);
         lusername = (EditText) findViewById(R.id.lusername);
         lpasswordtxt = (TextView) findViewById(R.id.lpasswordtxt);
         lpassword =(EditText) findViewById(R.id.lpassword);
+
         loginbutton =(Button) findViewById(R.id.loginbutton);
+        signupbutton =(Button) findViewById(R.id.signupbutton);
 
         loginError = (TextView) findViewById(R.id.loginError);
 
@@ -54,6 +62,17 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        signupbutton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getApplicationContext(),Signup.class);
+                startActivity(intent);
+
+            }
+        });
+
         loginbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,7 +80,7 @@ public class LoginActivity extends AppCompatActivity {
                 final LinearLayout loginWrap = (LinearLayout) findViewById(R.id.loginInformation);
                 final boolean visibleornot = loginWrap.isShown();
 
-                Message.message(getApplicationContext(), "Credentials " + lusername.getText().toString() + " " + lpassword.getText().toString() );
+                //Message.message(getApplicationContext(), "Credentials " + lusername.getText().toString() + " " + lpassword.getText().toString() );
 
                 if( visibleornot ){
 

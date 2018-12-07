@@ -109,6 +109,14 @@
             android:layout_centerHorizontal="true"
             android:text="Submit" />
 
+        <TextView
+            android:id="@+id/loginInstead"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_below="@+id/submit"
+            android:text="Have an account? Sign in here"
+            android:textColor="@color/white" />
+
     </LinearLayout>
 
 </RelativeLayout>

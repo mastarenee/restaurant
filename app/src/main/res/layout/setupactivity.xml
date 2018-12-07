@@ -71,6 +71,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="action_login"
+            android:background="#9cffffff"
+            android:layout_marginBottom="10px"
             android:text="Login" />
 
         <Button
@@ -78,6 +80,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="action_signup"
+            android:background="#9cffffff"
             android:text="Sign Up" />
     </LinearLayout>
 

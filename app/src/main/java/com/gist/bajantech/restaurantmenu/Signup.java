@@ -5,6 +5,7 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.ActionBar;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,6 +21,7 @@ public class Signup extends AppCompatActivity {
     private TextView passwordtxt;
     private EditText password;
     private TextView confirmpasswordtxt;
+    private TextView loginInstead;
     private EditText confirmpassword;
     private Button submit;
     myDbAdapter helper;
@@ -28,13 +30,19 @@ public class Signup extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
+
         usernametxt = (TextView) findViewById(R.id.usernametxt);
         username = (EditText) findViewById(R.id.username);
         passwordtxt = (TextView) findViewById(R.id.passwordtxt);
         password = (EditText) findViewById(R.id.password);
         confirmpasswordtxt = (TextView) findViewById(R.id.confirmpasswordtxt);
         confirmpassword = (EditText) findViewById(R.id.confirmpassword);
+
         submit = (Button) findViewById(R.id.submit);
+        loginInstead = (TextView) findViewById(R.id.loginInstead);
 
         // Start Video Playing in Background
         VideoView videoview = (VideoView) findViewById(R.id.videoview);
@@ -50,6 +58,15 @@ public class Signup extends AppCompatActivity {
                 mediaPlayer.setLooping(true);
             }
         });
+
+        loginInstead.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
